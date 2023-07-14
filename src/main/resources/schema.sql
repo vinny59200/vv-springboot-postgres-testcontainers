@@ -10,8 +10,8 @@ CREATE ROLE postgres WITH
 
 CREATE SCHEMA "vv-schema" AUTHORIZATION postgres;
 
-create table if not exists customers (
-	id int4 NOT NULL,
-	"name" varchar(255) NOT NULL,
-	CONSTRAINT "Customer_pkey" PRIMARY KEY (id)
+CREATE TABLE if not exists "vv-schema".customer (
+    id int4 NOT NULL,
+    "name" varchar(255) NOT NULL,
+    CONSTRAINT "Customer_pkey" PRIMARY KEY (id)
 );
