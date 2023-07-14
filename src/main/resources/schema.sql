@@ -1,4 +1,5 @@
-CREATE ROLE postgres WITH
+DROP ROLE IF EXISTS vv;
+CREATE ROLE vv WITH
 	SUPERUSER
 	CREATEDB
 	CREATEROLE
@@ -8,7 +9,7 @@ CREATE ROLE postgres WITH
 	BYPASSRLS
 	CONNECTION LIMIT -1;
 
-CREATE SCHEMA "vv-schema" AUTHORIZATION postgres;
+CREATE SCHEMA if not exists  "vv-schema" AUTHORIZATION vv;
 
 CREATE TABLE if not exists "vv-schema".customer (
     id int4 NOT NULL,
